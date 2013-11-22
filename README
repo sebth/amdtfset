@@ -1,14 +1,17 @@
 amdtfset is a command-line utility to set and query the tear free
 desktop option present in the AMD Catalyst graphics card driver (fglrx)
-through the AMD Display Library (ADL).
+through the AMD Display Library (ADL). It allows the user to enable and
+disable tear free desktop without having to start Catalyst Control
+Center and without having to restart X (which is the case with
+aticonfig).
 
 amdtfset could for instance be used in a wrapper script to automatically
-enable the tear free desktop option when playing a video. Here is an
-example wrapper script for MPlayer:
+enable tear free desktop when playing a video. Here is an example
+wrapper script for MPlayer:
 
 	#!/bin/sh
 	amdtfset on
-	mplayer "$@"
+	/usr/bin/mplayer "$@"
 	amdtfset off
 
 For information on how to install amdtfset, please see the included file
