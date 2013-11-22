@@ -1,0 +1,9 @@
+Simple installation to "/usr/local":
+
+	make
+	make install
+
+Stripped installation with custom CFLAGS, prefix and destination directory:
+
+	make CFLAGS=-O2
+	make PREFIX=/usr DESTDIR=/tmp/stage install-strip

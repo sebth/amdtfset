@@ -1,0 +1,82 @@
+.\" Copyright (c) 2013  Sebastian Thorarensen <sebth@naju.se>
+.\"
+.\" This is free documentation; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License as
+.\" published by the Free Software Foundation, either version 3 of
+.\" the License, or (at your option) any later version.
+.\"
+.\" The GNU General Public License's references to "object code"
+.\" and "executables" are to be interpreted as the output of any
+.\" document formatting or typesetting system, including
+.\" intermediate and printed output.
+.\"
+.\" This manual is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public
+.\" License along with this manual.  If not, see
+.\" <http://www.gnu.org/licenses/>.
+.TH AMDTFSET 1 2013-11-22
+.SH NAME
+amdtfset \- set and query tear free desktop for the AMD Catalyst driver (fglrx)
+.SH SYNOPSIS
+.B amdtfset
+[\fB-q\fR] [\fBon\fR | \fBoff\fR]
+.SH DESCRIPTION
+.LP
+.B amdtfset
+sets and queries the tear free desktop option present in the AMD Catalyst
+graphics card driver (fglrx).
+.LP
+Running
+.B amdtfset
+without any arguments will print the current tear free desktop status to
+standard output and set the exit status accordingly (see section
+\fBEXIT STATUS\fR).
+Running
+.B amdtfset
+with either the
+.B on
+or the
+.B off
+option will not print anything on standard output.  Setting the tear free
+desktop option will take effect immediatly;
+.BR Xorg (1)
+does not need to be restarted.
+.SH OPTIONS
+.TP
+.B \-q
+Quiet.  Do not print tear free desktop status to standard output when querying;
+only return exit status.
+.TP
+.B on
+Enable tear free desktop.
+.TP
+.B off
+Disable tear free desktop.
+.SH EXIT STATUS
+.LP
+The following exit values shall be returned when quering the tear free desktop
+status:
+.TP
+\ 0
+Tear free desktop is enabled.
+.TP
+>0
+Tear free desktop is disabled, or an error occurred.
+.LP
+The following exit values shall be returned when setting the tear free desktop
+option:
+.TP
+\ 0
+Tear free desktop option was successfully set.
+.TP
+>0
+An error occurred.
+.SH AUTHOR
+Sebastian Thorarensen <sebth@naju.se>
+.SH SEE ALSO
+.BR amdcccle (8),
+.BR aticonfig (1x)
