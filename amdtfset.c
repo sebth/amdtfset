@@ -44,7 +44,7 @@ static ADL_ADAPTER_TEAR_FREE_GET ADL_Adapter_Tear_Free_Get;
 
 static const char *tf_strstatus(int status)
 {
-	static char s[21 + sizeof(int) * CHAR_BIT / 3 + 2 + 1];
+	static char s[20 + (sizeof(int) * CHAR_BIT - 1) / 3 + 2];
 
 	switch (status) {
 		case ADL_ADAPTER_TEAR_FREE_ON:
